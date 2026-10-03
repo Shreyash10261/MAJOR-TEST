@@ -1,1 +1,1 @@
-export function brokenMethod() { return this_is_undefined; }
+export function brokenMethod() { return "fixed"; }
