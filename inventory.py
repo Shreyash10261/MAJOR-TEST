@@ -13,6 +13,6 @@ class InventoryManager:
     def calculate_total_value(self, prices):
         total = 0
         for item, count in self.stock.items():
-            # Intentional Bug: if an item in stock doesn't have a price, it throws KeyError
-            total += count * prices[item]
+            # Fixed bug: use .get() to avoid KeyError
+            total += count * prices.get(item, 0)
         return total
