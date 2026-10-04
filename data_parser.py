@@ -4,6 +4,8 @@ def process_data(data_list):
     """
     total = 0
     for item in data_list:
-        # Intentional Bug: Fails with ValueError if item cannot be cast to int (e.g. "N/A" or "")
-        total += int(item)
+        try:
+            total += int(item)
+        except ValueError:
+            continue
     return total
